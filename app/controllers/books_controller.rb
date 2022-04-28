@@ -17,16 +17,24 @@ class BooksController < ApplicationController
 
   def edit
     @book = Book.find(params[:id])
+    @books = Book.all
+    @updateerror = Book.new
   end
 
   def update
+    
+    @books = Book.all
+    @updateerror = Book.new(book_params)
+    
     @book = Book.find(params[:id])
     @book.update(book_params)
     
-    if @book.save
+    if @updateerror.save
     #詳細画面へリダイレクト
       flash[:notice] = "Book was successfully updated."
-      redirect_to book_path(@book.id)
+      redirect_to book_path(@updateerror.id)
+    else
+      render :edit
     end
   end
 
