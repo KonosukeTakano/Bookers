@@ -7,6 +7,7 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.all
+    @book = Book.new
   end
 
   def show
@@ -30,6 +31,9 @@ class BooksController < ApplicationController
   end
 
   def create
+    
+    @books = Book.all
+    
     #データを受け取り新規登録するためのインスタンス作成
     @book = Book.new(book_params)
     #データをデータベースに保存するためのsaveメソッド実行
@@ -38,6 +42,8 @@ class BooksController < ApplicationController
       flash[:notice] = "Book was successfully created."
       redirect_to book_path(@book.id)
       #一覧画面を表示、エラーメッセージを出したい
+    else
+      render :index
     end
   end
 
