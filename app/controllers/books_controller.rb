@@ -18,7 +18,6 @@ class BooksController < ApplicationController
   def edit
     @book = Book.find(params[:id])
     @books = Book.all
-    # @updateerror = Book.new
   end
 
   def update
@@ -53,9 +52,12 @@ class BooksController < ApplicationController
   end
 
   def destroy
-    book = Book.find(params[:id])  # データ（レコード）を1件取得
-    book.destroy  # データ（レコード）を削除
-    redirect_to '/books'  # 投稿一覧画面へリダイレクト
+    @book = Book.find(params[:id])  # データ（レコード）を1件取得
+    
+    if @book.destroy  # データ（レコード）を削除
+      flash[:notice] = "Book was successfully destroyed."
+      redirect_to index_book_path(@book.id)  # 投稿一覧画面へリダイレクト
+    end
   end
 
   private
