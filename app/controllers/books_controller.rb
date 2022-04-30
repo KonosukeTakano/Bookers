@@ -56,7 +56,7 @@ class BooksController < ApplicationController
     
     if @book.destroy  # データ（レコード）を削除
       flash[:notice] = "Book was successfully destroyed."
-      redirect_to index_book_path(@book.id)  # 投稿一覧画面へリダイレクト
+      redirect_to index_book_path  # 投稿一覧画面へリダイレクト
     end
   end
 

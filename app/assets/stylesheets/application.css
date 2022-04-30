@@ -81,9 +81,7 @@ input[type="submit"]{
   margin-bottom: 10px
 }
 
-/*.Show-Back-Button{*/
 
-/*}*/
 
 #notice {
     color: green;
@@ -106,6 +104,5 @@ input[type="submit"]{
 }
 .BookTable th,
 .BookTable td {
-    /*border: 1px solid #CCCCCC;*/
     text-align: center;
 }
