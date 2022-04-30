@@ -21,7 +21,7 @@
                 <tr class="list-wrap">
                   <td class="list-box"><%= book.title %></td>
                   <td class="list-box list-body"><%= book.body %></td>
-                  <td><%= link_to 'Show', "/books/show/#{book.id}" %></td>
+                  <td><%= link_to 'Show', book_path(book.id) %></td>
                   <td class="link-edit">
                     <%= link_to "Edit", "/books/#{book.id}/edit" %>
                   </td>

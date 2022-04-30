@@ -20,8 +20,8 @@
   
   <%= f.submit 'Update Book' %>
   <div class="Show-Back-Button">
-    <%= link_to 'Show', "/books/show/#{@book.id}" %>
-    <%= link_to "Back", index_book_path(@book.id) %>
+    <%= link_to 'Show', "/books/#{@book.id}" %>
+    <%= link_to "Back", index_book_path %>
   </div>
   
 <% end %>
