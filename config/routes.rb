@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
   
   get 'homes/top'
-  root to:  'homes#top'
+  root to: 'homes#top'
   
   get 'books/index'
   get 'books' => 'books#index',as:'index_book'
   
   #routing追記
   
-  get 'books/index' => 'books#new'
+  get 'books' => 'books#new'
   post 'books' => 'books#create'
   get 'books/show/:id'=> 'books#show',as: 'book'
   get 'books/:id/edit' => 'books#edit',as: 'edit_book'
