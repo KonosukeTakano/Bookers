@@ -16,12 +16,12 @@
   <div class="field">
     <h4>Body</h4>
     <%= f.text_area :body %>
-  </div> 
-  
+  </div>
+
   <%= f.submit 'Update Book' %>
   <div class="Show-Back-Button">
-    <%= link_to 'Show', "/books/#{@book.id}" %> | 
-    <%= link_to "Back", index_book_path %>
+    <%= link_to 'Show', "/books/#{@book.id}" %> |
+    <%= link_to "Back", books_path %>
   </div>
-  
+
 <% end %>
