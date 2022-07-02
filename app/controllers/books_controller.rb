@@ -23,7 +23,7 @@ class BooksController < ApplicationController
   def update
     @book = Book.find(params[:id])
     @book.update(book_params)
-    
+
     if @book.save
     #詳細画面へリダイレクト
       flash[:notice] = "Book was successfully updated."
@@ -31,13 +31,13 @@ class BooksController < ApplicationController
     else
       render :edit
     end
-    
+
   end
 
   def create
-    
+
     @books = Book.all
-    
+
     #データを受け取り新規登録するためのインスタンス作成
     @book = Book.new(book_params)
     #データをデータベースに保存するためのsaveメソッド実行
@@ -53,7 +53,7 @@ class BooksController < ApplicationController
 
   def destroy
     @book = Book.find(params[:id])  # データ（レコード）を1件取得
-    
+
     if @book.destroy  # データ（レコード）を削除
       flash[:notice] = "Book was successfully destroyed."
       redirect_to index_book_path  # 投稿一覧画面へリダイレクト
