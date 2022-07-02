@@ -1,9 +1,4 @@
 class BooksController < ApplicationController
-  def new
-    #Viewへ渡すためのインスタンス変数に空のModelオブジェクトを生成する。
-    @book = Book.new
-
-  end
 
   def index
     @books = Book.all
@@ -56,7 +51,7 @@ class BooksController < ApplicationController
 
     if @book.destroy  # データ（レコード）を削除
       flash[:notice] = "Book was successfully destroyed."
-      redirect_to index_book_path  # 投稿一覧画面へリダイレクト
+      redirect_to books_path  # 投稿一覧画面へリダイレクト
     end
   end
 
