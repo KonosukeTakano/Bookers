@@ -19,9 +19,10 @@
   </div>
 
   <%= f.submit 'Update Book' %>
-  <div class="Show-Back-Button">
-    <%= link_to 'Show', book_path(@book.id) %> |
-    <%= link_to "Back", books_path %>
-  </div>
 
 <% end %>
+
+<div class="Show-Back-Button">
+  <%= link_to 'Show', book_path(@book.id) %> |
+  <%= link_to "Back", books_path %>
+</div>
